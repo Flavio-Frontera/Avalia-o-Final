@@ -5,10 +5,10 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: db-endpoint.c98i000mqf2o.us-east-1.rds.amazonaws.com
-      WORDPRESS_DB_USER: flavor
-      WORDPRESS_DB_PASSWORD: 998049352
-      WORDPRESS_DB_NAME: db_wordpress
+      WORDPRESS_DB_HOST: endpoint do banco de dados
+      WORDPRESS_DB_USER: usuario do banco
+      WORDPRESS_DB_PASSWORD: senha do banco
+      WORDPRESS_DB_NAME: nome do banco
     volumes:
       - /wordpress:/var/www/html
     networks:
@@ -17,3 +17,4 @@ services:
 networks:
   tunel:
     driver: bridge
+
