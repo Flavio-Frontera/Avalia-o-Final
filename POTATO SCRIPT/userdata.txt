@@ -11,7 +11,7 @@ sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 sudo mkdir -p /wordpress
-sudo mount -t efs -o tls fs-002b9cc50f2f5ef18:/ /wordpress
+sudo mount -t efs -o tls "Endereço do EFS" /wordpress
 
 if mountpoint -q /wordpress; then
     echo "EFS montado com sucesso em /wordpress"
@@ -19,8 +19,9 @@ else
     echo "Falha ao montar EFS"
 fi
 
-wget -O /home/ec2-user/docker-compose.yml https://raw.githubusercontent.com/Daijinpala/AVA4_24032025/refs/heads/main/POTATO%20SCRIPT/docker-compose.yml
+wget -O /home/ec2-user/docker-compose.yml "https do docker-compose.yml"
 sudo chown ec2-user:ec2-user /home/ec2-user/docker-compose.yml
 
 cd /home/ec2-user
 sudo docker-compose up -d
+
