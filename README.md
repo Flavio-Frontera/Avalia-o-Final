@@ -279,9 +279,9 @@ https://hub.docker.com/_/wordpress
 6- Criar uma abstração do banco de dados (Opcional).
 
 ```
-|- DB NAME 'projetinho'
-|-- DB USER 'cariani'
-|-- DB PASSWORD '0311'
+|- DB NAME '------'
+|-- DB USER '----'
+|-- DB PASSWORD '---'
 ```
 
 7- Criar um compose seguindo a documentação acima.
@@ -295,10 +295,10 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: cariani
-      WORDPRESS_DB_PASSWORD: 0311
-      WORDPRESS_DB_NAME: projetinho
+      WORDPRESS_DB_HOST: -----
+      WORDPRESS_DB_USER: -----
+      WORDPRESS_DB_PASSWORD: ---
+      WORDPRESS_DB_NAME: -----
     volumes:
       - wordp:/var/www/html
     networks:
@@ -308,9 +308,9 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: projetinho
-      MYSQL_USER: cariani
-      MYSQL_PASSWORD: 0311
+      MYSQL_DATABASE: -----
+      MYSQL_USER: -----
+      MYSQL_PASSWORD: ----
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - dbm:/var/lib/mysql
@@ -426,10 +426,10 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: 
-      WORDPRESS_DB_USER: flavor
-      WORDPRESS_DB_PASSWORD: 998049352
-      WORDPRESS_DB_NAME: db_projetinho
+      WORDPRESS_DB_HOST: ----
+      WORDPRESS_DB_USER: ----
+      WORDPRESS_DB_PASSWORD: ----
+      WORDPRESS_DB_NAME: ------
     volumes:
       - /home/ec2-user/wordpress:/var/www/html
     networks:
@@ -496,10 +496,10 @@ Especificações:
 
 ----------------------------------------------------------------------------------------
 
-|- NAME DB 'db-wordpress'
-|-- NAME USER 'flavor'
-|-- PASSWORD '998049352'
-|--- DATABASE NAME 'db_projetinho'
+|- NAME DB '------'
+|-- NAME USER '----'
+|-- PASSWORD '----'
+|--- DATABASE NAME '-----'
 
 ```
 ![7](png/rds_mysql.png)
@@ -573,10 +573,10 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: db-wordpress.c98i000mqf2o.us-east-1.rds.amazonaws.com
-      WORDPRESS_DB_USER: flavor
-      WORDPRESS_DB_PASSWORD: 998049352
-      WORDPRESS_DB_NAME: db_projetinho
+      WORDPRESS_DB_HOST: ------
+      WORDPRESS_DB_USER: ----
+      WORDPRESS_DB_PASSWORD: ----
+      WORDPRESS_DB_NAME: ----
     networks:
       - tunel
 
